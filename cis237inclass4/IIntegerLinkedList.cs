@@ -11,6 +11,11 @@ namespace cis237inclass4
         void AddMaintainSort(int integerData);
         int RemoveMaintainSort(int removeData);
 
+        void AddToFront(int integerData);
+        void AddToBack(int integerData);
+        int RemoveFromFront();
+        int RemoveFromBack();
+
         void Display();
 
         bool IsEmpty { get; }

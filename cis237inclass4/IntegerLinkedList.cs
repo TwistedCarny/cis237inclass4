@@ -36,6 +36,116 @@ namespace cis237inclass4
             }
         }
 
+        public void AddToFront(int integerData)
+        {
+            Node oldHead = _head;
+
+            _head = new Node();
+
+            _head.Data = integerData;
+
+            _head.Next = oldHead;
+
+            _size++;
+
+            if(_tail == null)
+            {
+                _tail = _head;
+            }
+        }
+
+        public void AddToBack(int integerData)
+        {
+            Node oldTail = _tail;
+
+            _tail = new Node();
+
+            _tail.Data = integerData;
+
+            _tail.Next = null;
+
+            if(IsEmpty)
+            {
+                _head = _tail;
+            }
+            else
+            {
+                oldTail.Next = _tail;
+            }
+            _size++;
+        }
+
+        public int RemoveFromFront()
+        {
+            if (IsEmpty)
+            {
+                throw new Exception("List is empty");
+            }
+
+            int returnData = _head.Data;
+
+            _head = _head.Next;
+
+            _size--;
+
+            if (IsEmpty)
+            {
+                _tail = null;
+            }
+
+            return returnData;
+        }
+
+        public int RemoveFromBack()
+        {
+            if (IsEmpty)
+            {
+                throw new Exception("List is empty");
+            }
+
+            int returnData = _tail.Data;
+
+            if(_head == _tail)
+            {
+                _head = null;
+                _tail = null;
+            }
+            else
+            {
+                Node currentNode = _head;
+                while(currentNode.Next != _tail)
+                {
+                    currentNode = currentNode.Next;
+                }
+
+                _tail = currentNode;
+
+                _tail.Next = null;
+            }
+
+            return returnData;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public void AddMaintainSort(int integerData)
         {
             Node newNode = new Node();

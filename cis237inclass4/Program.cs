@@ -23,6 +23,8 @@ namespace cis237inclass4
             linkedList.RemoveMaintainSort(3);
             linkedList.RemoveMaintainSort(1);
 
+            linkedList.AddToFront(15);
+
             linkedList.Display();
         }
     }
