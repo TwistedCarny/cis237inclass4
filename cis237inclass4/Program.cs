@@ -26,6 +26,28 @@ namespace cis237inclass4
             linkedList.AddToFront(15);
 
             linkedList.Display();
+
+            Console.WriteLine("GENERIC BELOW");
+
+            IGenericLinkedList<string> genericLinkedList = new GenericLinkedList<string>();
+
+            IGenericLinkedList<double> doubleLinkedList = new GenericLinkedList<double>();
+
+            genericLinkedList.AddToFront("1");
+            genericLinkedList.AddToFront("2");
+            genericLinkedList.AddToFront("3");
+            genericLinkedList.AddToBack("4");
+            genericLinkedList.AddToBack("5");
+            genericLinkedList.AddToBack("6");
+            genericLinkedList.AddToBack("7");
+
+            genericLinkedList.Display();
+
+            genericLinkedList.RemoveFromFront();
+            genericLinkedList.RemoveFromFront();
+            genericLinkedList.RemoveFromBack();
+
+            genericLinkedList.Display();
         }
     }
 }
